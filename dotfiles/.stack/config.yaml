@@ -6,10 +6,10 @@
 # in the cabal config. We recommend uncommenting them and filling them out if
 # you intend to use 'stack new'.
 # See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
-templates:
-  params:
-   author-name: Sam Roeca
-   author-email: samuel.roeca@gmail.com
-   copyright: MIT
-   github-username: pappasam
-   category: Testing
+#templates:
+#  params:
+#   author-name: Sam Roeca
+#   author-email: samuel.roeca@gmail.com
+#   copyright: MIT
+#   github-username: pappasam
+#   category: Testing

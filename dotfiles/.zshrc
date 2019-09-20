@@ -1090,111 +1090,8 @@ fi
 
 # }}}
 
- If you come from bash you might have to change your $PATH.
- <Plug>AutoPairsReturn# export PATH=$HOME/bin:/usr/local/bin:$PATH
- <Plug>AutoPairsReturn#
- <Plug>AutoPairsReturn# Skipping verification of insecure directories
- <Plug>AutoPairsReturnZSH_DISABLE_COMPFIX="true"
- <Plug>AutoPairsReturn
- <Plug>AutoPairsReturn# Path to your oh-my-zsh installation.
- <Plug>AutoPairsReturn  export ZSH="/home/angel_juarez/.oh-my-zsh"
- <Plug>AutoPairsReturn
- <Plug>AutoPairsReturn# Set name of the theme to load --- if set to "random", it will
- # <Plug>AutoPairsReturn# load a random theme each time oh-my-zsh is loaded, in which case,
-   # <Plug>AutoPairsReturn# to know which specific one was loaded, run: echo $RANDOM_THEME
-   # <Plug>AutoPairsReturn# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-   # <Plug>AutoPairsReturnZSH_THEME="robbyrussell"
-   # <Plug>AutoPairsReturn
-   # <Plug>AutoPairsReturn# Set list of themes to pick from when loading at random
-   # <Plug>AutoPairsReturn# Setting this variable when ZSH_THEME=random will cause zsh to load
-   # <Plug>AutoPairsReturn# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-   # <Plug>AutoPairsReturn# If set to an empty array, this variable will have no effect.
-   # <Plug>AutoPairsReturn# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-   # <Plug>AutoPairsReturn
-   # <Plug>AutoPairsReturn# Uncomment the following line to use case-sensitive completion.
-     # <Plug>AutoPairsReturn# CASE_SENSITIVE="true"
-     # <Plug>AutoPairsReturn
-     # <Plug>AutoPairsReturn# Uncomment the following line to use hyphen-insensitive completion.
-     # <Plug>AutoPairsReturn# Case-sensitive completion must be off. _ and - will be interchangeable.
-     # <Plug>AutoPairsReturn# HYPHEN_INSENSITIVE="true"
-     # <Plug>AutoPairsReturn
-     # <Plug>AutoPairsReturn# Uncomment the following line to disable bi-weekly auto-update checks.
-     # <Plug>AutoPairsReturn# DISABLE_AUTO_UPDATE="true"
-     # <Plug>AutoPairsReturn
-     # <Plug>AutoPairsReturn# Uncomment the following line to change how often to auto-update (in days).
-     # <Plug>AutoPairsReturn# export UPDATE_ZSH_DAYS=13
-     # <Plug>AutoPairsReturn
-     # <Plug>AutoPairsReturn# Uncomment the following line to disable colors in ls.
-     # <Plug>AutoPairsReturn# DISABLE_LS_COLORS="true"
-     # <Plug>AutoPairsReturn
-     # <Plug>AutoPairsReturn# Uncomment the following line to disable auto-setting terminal title.
-     # <Plug>AutoPairsReturn# DISABLE_AUTO_TITLE="true"
-     # <Plug>AutoPairsReturn
-     # <Plug>AutoPairsReturn# Uncomment the following line to enable command auto-correction.
-     # <Plug>AutoPairsReturn# ENABLE_CORRECTION="true"
-     # <Plug>AutoPairsReturn
-     # <Plug>AutoPairsReturn# Uncomment the following line to display red dots whilst waiting for completion.
-       # <Plug>AutoPairsReturn# COMPLETION_WAITING_DOTS="true"
-       # <Plug>AutoPairsReturn
-       # <Plug>AutoPairsReturn# Uncomment the following line if you want to disable marking untracked files
-         # <Plug>AutoPairsReturn# under VCS as dirty. This makes repository status check for large repositories
-           # <Plug>AutoPairsReturn# much, much faster.
-           # <Plug>AutoPairsReturn# DISABLE_UNTRACKED_FILES_DIRTY="true"
-           # <Plug>AutoPairsReturn
-           # <Plug>AutoPairsReturn# Uncomment the following line if you want to change the command execution time
-             # <Plug>AutoPairsReturn# stamp shown in the history command output.
-             # <Plug>AutoPairsReturn# You can set one of the optional three formats:
-             # <Plug>AutoPairsReturn# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-             # <Plug>AutoPairsReturn# or set a custom format using the strftime function format specifications,
-             # <Plug>AutoPairsReturn# see 'man strftime' for details.
-               # <Plug>AutoPairsReturn# HIST_STAMPS="mm/dd/yyyy"
-               # <Plug>AutoPairsReturn
-               # <Plug>AutoPairsReturn# Would you like to use another custom folder than $ZSH/custom?
-               # <Plug>AutoPairsReturn# ZSH_CUSTOM=/path/to/new-custom-folder
-               # <Plug>AutoPairsReturn
-               # <Plug>AutoPairsReturn# Which plugins would you like to load?
-               # <Plug>AutoPairsReturn# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-               # <Plug>AutoPairsReturn# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-               # <Plug>AutoPairsReturn# Example format: plugins=(rails git textmate ruby lighthouse)
-               # <Plug>AutoPairsReturn# Add wisely, as too many plugins slow down shell startup.
-               # <Plug>AutoPairsReturnplugins=(
-               # <Plug>AutoPairsReturn git
-               # <Plug>AutoPairsReturn zsh-syntax-highlighting
-               # <Plug>AutoPairsReturn)
-               # <Plug>AutoPairsReturn
-               # <Plug>AutoPairsReturnsource $ZSH/oh-my-zsh.sh
-               # <Plug>AutoPairsReturn
-               # <Plug>AutoPairsReturn# User configuration
-               # <Plug>AutoPairsReturn
-               # <Plug>AutoPairsReturn# export MANPATH="/usr/local/man:$MANPATH"
-               # <Plug>AutoPairsReturn
-               # <Plug>AutoPairsReturn# You may need to manually set your language environment
-               # <Plug>AutoPairsReturn# export LANG=en_US.UTF-8
-               # <Plug>AutoPairsReturn
-               # <Plug>AutoPairsReturn# Preferred editor for local and remote sessions
-                 # <Plug>AutoPairsReturn# if [[ -n $SSH_CONNECTION ]]; then
-                   # <Plug>AutoPairsReturn#   export EDITOR='vim'
-                   # <Plug>AutoPairsReturn# else
-                     # <Plug>AutoPairsReturn#   export EDITOR='mvim'
-                     # <Plug>AutoPairsReturn# fi
-                     # <Plug>AutoPairsReturn
-                     # <Plug>AutoPairsReturn# Compilation flags
-                     # <Plug>AutoPairsReturn# export ARCHFLAGS="-arch x86_64"
-                     # <Plug>AutoPairsReturn
-                     # <Plug>AutoPairsReturn# Set personal aliases, overriding those provided by oh-my-zsh libs,
-                     # <Plug>AutoPairsReturn# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-                     # <Plug>AutoPairsReturn# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-                     # <Plug>AutoPairsReturn# For a full list of active aliases, run `alias`.
-                     # <Plug>AutoPairsReturn#
-                     # <Plug>AutoPairsReturn# Example aliases
-                     # <Plug>AutoPairsReturn# alias zshconfig="mate ~/.zshrc"
-                     # <Plug>AutoPairsReturn# alias ohmyzsh="mate ~/.oh-my-zsh"
-                     # <Plug>AutoPairsReturn#
-                     # <Plug>AutoPairsReturn[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
-                     # <Plug>AutoPairsReturn
-                     # <Plug>AutoPairsReturn[ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
-
-
+# Angels .zshrc {{{
+#
 ## This is where I copy and pasted my own way because bleh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -1299,3 +1196,5 @@ source $ZSH/oh-my-zsh.sh
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 
 [ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
+
+# }}}
