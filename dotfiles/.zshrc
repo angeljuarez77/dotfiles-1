@@ -1089,7 +1089,6 @@ if [[ -o interactive ]]; then
 fi
 
 # }}}
-
 # Angels .zshrc {{{
 #
 ## This is where I copy and pasted my own way because bleh

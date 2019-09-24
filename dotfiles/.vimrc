@@ -146,6 +146,7 @@ function! SetGlobalConfig()
 
   " Numbering:
   set number
+  set relativenumber
 
   " Window Splitting: Set split settings (options: splitright, splitbelow)
   set splitright
