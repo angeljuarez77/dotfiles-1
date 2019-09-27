@@ -287,6 +287,7 @@ function PackInit() abort
 
   " Autocompletion And IDE Features:
   call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
+  call minpac#add('roxma/vim-hug-neovim-rpc')
   call minpac#add('Shougo/neosnippet.vim')
   call minpac#add('Shougo/neosnippet-snippets')
   call minpac#add('Shougo/neco-vim')
