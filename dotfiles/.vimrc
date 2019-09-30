@@ -719,6 +719,7 @@ let g:PaperColor_Theme_Options.language = {
 
 " Load:
 try
+  syntax on
   colorscheme PaperColor
 catch
   echo 'An error occured while configuring PaperColor'
