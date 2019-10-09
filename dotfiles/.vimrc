@@ -146,6 +146,7 @@ function! SetGlobalConfig()
 
   " Numbering:
   set number
+  set relativenumber
 
   " Window Splitting: Set split settings (options: splitright, splitbelow)
   set splitright
@@ -286,6 +287,7 @@ function PackInit() abort
 
   " Autocompletion And IDE Features:
   call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
+  call minpac#add('roxma/vim-hug-neovim-rpc')
   call minpac#add('Shougo/neosnippet.vim')
   call minpac#add('Shougo/neosnippet-snippets')
   call minpac#add('Shougo/neco-vim')
@@ -717,6 +719,7 @@ let g:PaperColor_Theme_Options.language = {
 
 " Load:
 try
+  syntax on
   colorscheme PaperColor
 catch
   echo 'An error occured while configuring PaperColor'
