@@ -34,7 +34,7 @@ function path_radd() {
 
 # Colors when using the LS command
 # NOTE:
-# Color codes:
+#Color codes:
 #   0   Default Colour
 #   1   Bold
 #   4   Underlined
@@ -92,8 +92,8 @@ function path_radd() {
 #LS_COLORS+="ex=1;92:"
 # additional file types as-defined by their extension
 #LS_COLORS+="*.rpm=90"
-
-# Finally, export LS_COLORS
+#
+## Finally, export LS_COLORS
 #export LS_COLORS
 
 # }}}
@@ -1089,7 +1089,6 @@ if [[ -o interactive ]]; then
 fi
 
 # }}}
-
 # Angels .zshrc {{{
 #
 ## This is where I copy and pasted my own way because bleh
@@ -1100,7 +1099,7 @@ fi
 ZSH_DISABLE_COMPFIX="true"
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/Users/blancaflores/.oh-my-zsh"
+  export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
