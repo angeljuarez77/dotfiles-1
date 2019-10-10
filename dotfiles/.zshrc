@@ -191,6 +191,11 @@ if [ -d "$POETRY_LOC" ]; then
   source $HOME/.poetry/env
 fi
 
+INTELLIJ_IDEA="$HOME/idea-IU-192.6817.14/bin"
+if [ -d "$INTELLIJ_IDEA" ]; then
+  path_ladd "$INTELLIJ_IDEA"
+fi
+
 # EXPORT THE FINAL, MODIFIED PATH
 export PATH
 
