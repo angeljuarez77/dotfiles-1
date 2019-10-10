@@ -169,6 +169,9 @@ export RUST_SRC_PATH="$RUST_TOOLCHAIN_PATH/lib/rustlib/src/rust/src"
 # Bat
 export BAT_PAGER=''
 
+# IntelliJ IDEA
+export intellij='$HOME/idea-IU-192.6817.14/bin'
+
 # }}}
 # Path appends + Misc env setup {{{
 
