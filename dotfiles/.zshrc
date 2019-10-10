@@ -526,6 +526,10 @@ alias nodenv-init='eval "$(nodenv init -)"'
 alias goenv-init='eval "$(goenv init -)"'
 alias rbenv-init='eval "$(rbenv init -)"'
 
+# IntelliJ
+alias intellij='idea.sh'
+alias inhere='idea.sh .'
+
 # }}}
 # Functions {{{
 
