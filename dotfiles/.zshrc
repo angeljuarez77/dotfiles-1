@@ -196,6 +196,11 @@ if [ -d "$INTELLIJ_IDEA" ]; then
   path_ladd "$INTELLIJ_IDEA"
 fi
 
+JAVA_HOME="$HOME/jdk1.8.0_221"
+if [ -d "$JAVA_HOME" ]; then
+  path_ladd "$JAVA_HOME"
+fi
+
 # EXPORT THE FINAL, MODIFIED PATH
 export PATH
 
@@ -446,15 +451,15 @@ alias vim='nvim'
 alias grep='grep --color=auto'
 
 # enable color support of ls and also add handy aliases
-#alias ls='ls --color=auto'
-#alias dir='dir --color=auto'
-#alias vdir='vdir --color=auto'
-#
-#alias sl='ls'
-#alias ll='ls -alF'
-#alias la='ls -A'
-#alias l='ls -CF'
-#alias list='ls -a'
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias sl='ls'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias list='ls -a'
 
 # diff
 # r: recursively; u: shows line number; p: shows difference in C function
@@ -1101,7 +1106,7 @@ if [[ -o interactive ]]; then
 fi
 
 # }}}
-# Angels .zshrc {{{
+# Default .oh-my-zsh .zshrc {{{
 #
 ## This is where I copy and pasted my own way because bleh
 # If you come from bash you might have to change your $PATH.
