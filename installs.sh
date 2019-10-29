@@ -29,7 +29,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # idk how to categorize this
 sudo apt install curl
-sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
+sudo apt-get install libssl-dev libreadline-dev zlib1g-dev
 sudo apt-get install weechat
 
 # For the lols and coolness
@@ -61,9 +61,9 @@ sdk install springboot
 # apache
 sudo apt install apache2
 
-# apache tomcat 9.0.27 - this didn't work from the install script because it downloaded to the wrong place
-# wget http://mirrors.advancedhosters.com/apache/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz ~/Downloads
-# tar xzf ~/Downloads/apache-tomcat-9.0.26.tar.gz # The unzipped tarball has more instructions but Intellij and/or Eclipse allows you to just choose the folder
+# apache tomcat 9.0.27
+wget -P ~/Downloads/ http://mirrors.advancedhosters.com/apache/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz
+tar xzf ~/Downloads/apache-tomcat-9.0.27.tar.gz -C ~/Downloads/
 
 # Maven - I'm just going to go with the easier one - Here's a thing though. https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-18-04/
 sudo apt install maven
