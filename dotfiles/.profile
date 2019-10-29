@@ -12,3 +12,5 @@
 # my dotfiles for "WARNING"
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+export PATH="$HOME/.cargo/bin:$PATH"
