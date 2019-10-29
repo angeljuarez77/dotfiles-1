@@ -1,6 +1,6 @@
 # !/bin/bash
 
-# Last updated 10/29/2019. Check if there are any updates. Or don't.
+# Last updated 10/29/2019. Check if there are any updates to the packages. Or don't.
 
 sudo apt update
 
@@ -14,15 +14,6 @@ sudo apt update
 # For git/GitHub
 sudo apt install git
 sudo apt-get install xclip
-
-# VIM - Vi IMproved
-sudo apt install vim
-sudo apt install neovim
-git clone https://github.com/k-takata/minpac.git \
-    ~/.vim/pack/minpac/opt/minpac
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 # tmux
 sudo apt install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -31,10 +22,33 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo apt install curl
 sudo apt-get install libssl-dev libreadline-dev zlib1g-dev
 sudo apt-get install weechat
+sudo apt-get install gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+# Some C/see stuff ripped off of Samuel Roecas files lol
+sudo apt install cmake llvm-6.0 llvm-6.0-dev libclang-6.0-dev
+sudo apt-get install pkg-config
+sudo apt-get install python3-pip
 
 # For the lols and coolness
 sudo apt install fortune cowsay bsdgames bsdgames-nonfree
 sudo apt install fonts-firacode
+
+# Linux Brew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
+# VIM - Vi IMproved
+sudo apt install vim
+# git clone https://github.com/neovim/neovim.git ~/neovim
+# cd ~/neovim && sudo make install                        <== I don't know if this works
+# cd ~
+pip3 install --upgrade pynvim
+git clone https://github.com/k-takata/minpac.git \
+    ~/.vim/pack/minpac/opt/minpac
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.4
@@ -68,10 +82,12 @@ tar xzf ~/Downloads/apache-tomcat-9.0.27.tar.gz -C ~/Downloads/
 # Maven - I'm just going to go with the easier one - Here's a thing though. https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-18-04/
 sudo apt install maven
 
-#Editors
+#Editors and other GUI tools
+sudo apt install snapd
 sudo snap install intellij-idea-ultimate --classic # Intellij - Ultimate Edition - https://www.jetbrains.com/help/idea/installation-guide.html
 snap remove vscode
 snap install code --classic # VSCode
+sudo snap install insomnia
 
 # zsh
 sudo apt install zsh
