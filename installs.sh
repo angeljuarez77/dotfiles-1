@@ -30,6 +30,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # idk how to categorize this
 sudo apt install curl
 sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
+sudo apt-get install weechat
 
 # For the lols and coolness
 sudo apt install fortune cowsay bsdgames bsdgames-nonfree
