@@ -29,6 +29,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # idk how to categorize this
 sudo apt install curl
+sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 
 # For the lols and coolness
 sudo apt install fortune cowsay bsdgames bsdgames-nonfree
@@ -43,6 +44,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Rust
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 asdf install nodejs 12.13.0
+echo 'nodejs 12.13.0' > ~/.tool-versions
+
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf install ruby 2.6.5 # this shit takes forever
+echo 'ruby 2.6.5' >> ~/.tool-versions
 
 # sdkman
 curl -s "https://get.sdkman.io" | bash
