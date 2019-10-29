@@ -43,6 +43,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.4
 
 # sdkman
 curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # spring-boot cli
 sdk install springboot
@@ -50,9 +51,9 @@ sdk install springboot
 # apache
 sudo apt install apache2
 
-# apache tomcat 9.0.27
-wget http://mirrors.advancedhosters.com/apache/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz ~/Downloads
-tar xzf ~/Downloads/apache-tomcat-9.0.26.tar.gz # The unzipped tarball has more instructions but Intellij and/or Eclipse allows you to just choose the folder
+# apache tomcat 9.0.27 - this didn't work from the install script because it downloaded to the wrong place
+# wget http://mirrors.advancedhosters.com/apache/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz ~/Downloads
+# tar xzf ~/Downloads/apache-tomcat-9.0.26.tar.gz # The unzipped tarball has more instructions but Intellij and/or Eclipse allows you to just choose the folder
 
 # Maven - I'm just going to go with the easier one - Here's a thing though. https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-18-04/
 sudo apt install maven
