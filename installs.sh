@@ -27,10 +27,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 sudo apt install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Languages
-sudo apt install openjdk-8-jdk # I'm going to have to add this to $PATH JAVA_HOME = /usr/lib/jvm/java-version/bin/
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Rust
-
 # idk how to categorize this
 sudo apt install curl
 
@@ -40,6 +36,13 @@ sudo apt install fonts-firacode
 
 # asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.4
+
+# Languages
+sudo apt install openjdk-8-jdk # I'm going to have to add this to $PATH JAVA_HOME = /usr/lib/jvm/java-version/bin/
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Rust
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+asdf install nodejs 12.13.0
 
 # sdkman
 curl -s "https://get.sdkman.io" | bash
