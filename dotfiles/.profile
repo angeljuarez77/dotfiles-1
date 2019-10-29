@@ -10,7 +10,7 @@
 # system python might break when on the latest version from pyenv. I mention
 # this to protect myself from any breakages; hopefully I'm wise enough to grep
 # my dotfiles for "WARNING"
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
+#
+#I have no idea how this line right under here got here.
 export PATH="$HOME/.cargo/bin:$PATH"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
