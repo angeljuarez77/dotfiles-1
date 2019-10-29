@@ -549,8 +549,8 @@ alias goenv-init='eval "$(goenv init -)"'
 alias rbenv-init='eval "$(rbenv init -)"'
 
 # IntelliJ
-alias intellij='idea.sh'
-alias inhere='idea.sh .'
+# alias intellij='idea.sh'
+alias idea='intellij-idea-ultimate'
 
 # Eclipse
 alias eclipse='~/eclipse/java-2019-09/eclipse/eclipse'
