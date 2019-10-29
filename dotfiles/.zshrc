@@ -71,30 +71,30 @@ function path_radd() {
 #   106 Turquoise Background
 # Parameters
 #   di 	Directory
-#LS_COLORS="di=1;34:"
+LS_COLORS="di=1;34:"
 #   fi 	File
-#LS_COLORS+="fi=0:"
+LS_COLORS+="fi=0:"
 #   ln 	Symbolic Link
-#LS_COLORS+="ln=1;36:"
+LS_COLORS+="ln=1;36:"
 #   pi 	Fifo file
-#LS_COLORS+="pi=5:"
+LS_COLORS+="pi=5:"
 #   so 	Socket file
-#LS_COLORS+="so=5:"
+LS_COLORS+="so=5:"
 #   bd 	Block (buffered) special file
-#LS_COLORS+="bd=5:"
+LS_COLORS+="bd=5:"
 #   cd 	Character (unbuffered) special file
-#LS_COLORS+="cd=5:"
+LS_COLORS+="cd=5:"
 #   or 	Symbolic Link pointing to a non-existent file (orphan)
-#LS_COLORS+="or=31:"
+LS_COLORS+="or=31:"
 #   mi 	Non-existent file pointed to by a symbolic link (visible with ls -l)
-#LS_COLORS+="mi=0:"
+LS_COLORS+="mi=0:"
 #   ex 	File which is executable (ie. has 'x' set in permissions).
-#LS_COLORS+="ex=1;92:"
+LS_COLORS+="ex=1;92:"
 # additional file types as-defined by their extension
-#LS_COLORS+="*.rpm=90"
+LS_COLORS+="*.rpm=90"
 #
 ## Finally, export LS_COLORS
-#export LS_COLORS
+export LS_COLORS
 
 # }}}
 # Exported variables: General {{{
@@ -172,6 +172,13 @@ export BAT_PAGER=''
 # IntelliJ IDEA
 export intellij='$HOME/idea-IU-192.6817.14/bin'
 
+#NVM Node Version Manager
+# export NVM_DIR="$HOME/.nvm"
+# ^^ redundant because I have asdf???
+
+#Tomcat Home Install version 9.0.27
+export CATALINA_HOME='/opt/tomcat/'
+
 # }}}
 # Path appends + Misc env setup {{{
 
@@ -196,9 +203,19 @@ if [ -d "$INTELLIJ_IDEA" ]; then
   path_ladd "$INTELLIJ_IDEA"
 fi
 
-JAVA_HOME="$HOME/jdk1.8.0_221"
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 if [ -d "$JAVA_HOME" ]; then
   path_ladd "$JAVA_HOME"
+fi
+
+JRE_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
+if [ -d "$JAVA_HOME" ]; then
+  path_ladd "$JAVA_HOME"
+fi
+
+ANT_HOME="$HOME/apache-ant-1.9.14"
+if [ -d "$ANT_HOME" ]; then
+  path_ladd $ANT_HOME/bin
 fi
 
 # EXPORT THE FINAL, MODIFIED PATH
@@ -534,6 +551,10 @@ alias rbenv-init='eval "$(rbenv init -)"'
 # IntelliJ
 alias intellij='idea.sh'
 alias inhere='idea.sh .'
+
+# Eclipse
+alias eclipse='~/eclipse/java-2019-09/eclipse/eclipse'
+alias jee-eclipse='~/Downloads/eclipse-jee-2019-09-R-linux-gtk-x86_64/eclipse/eclipse'
 
 # }}}
 # Functions {{{
@@ -1106,7 +1127,7 @@ if [[ -o interactive ]]; then
 fi
 
 # }}}
-# Default .oh-my-zsh .zshrc {{{
+# Default .oh-my-zsh .zshrc && nvm config for ubuntu {{{
 #
 ## This is where I copy and pasted my own way because bleh
 # If you come from bash you might have to change your $PATH.
@@ -1209,7 +1230,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-#[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ^^^ Redundant becuase of asdf
 #
 #[ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
 
