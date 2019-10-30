@@ -14,3 +14,4 @@
 #I have no idea how this line right under here got here.
 export PATH="$HOME/.cargo/bin:$PATH"
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
