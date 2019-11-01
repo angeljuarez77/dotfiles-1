@@ -1,6 +1,6 @@
 # !/bin/bash
 
-# Last updated 10/29/2019. Check if there are any updates to the packages. Or don't.
+# Last updated 10/31/2019. Check if there are any updates to the packages. Or don't.
 
 sudo apt update
 
@@ -9,7 +9,7 @@ sudo apt update
 
 # I installed stow from here https://launchpad.net/ubuntu/bionic/amd64/stow/2.2.2-1
 # I chose the .deb package http://launchpadlibrarian.net/236857449/stow_2.2.2-1_all.deb
-# sudo apt install stow # I didn't know this was a thing until after and I never tested it
+sudo apt install stow # I didn't know this was a thing until after and I never tested it
 
 # For git/GitHub
 sudo apt install git
@@ -21,12 +21,12 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # idk how to categorize this
 sudo apt install curl
 sudo apt-get install libssl-dev libreadline-dev zlib1g-dev
-sudo apt-get install weechat
 sudo apt-get install gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
 # Some C/see stuff ripped off of Samuel Roecas files lol
 sudo apt install cmake llvm-6.0 llvm-6.0-dev libclang-6.0-dev
 sudo apt-get install pkg-config
 sudo apt-get install python3-pip
+sudo apt install net-tools
 
 # For the lols and coolness
 sudo apt install fortune cowsay bsdgames bsdgames-nonfree
@@ -38,6 +38,48 @@ test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
+# WeeChat - Slack
+sudo apt-get install libgcrypt11-dev zlib1g-dev
+sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install libncurses5-dev libncursesw5-dev
+wget -P ~/Downloads https://weechat.org/files/src/weechat-2.6.tar.gz
+tar xzf ~/Downloads/weechat-2.6.tar.gz -C ~/Downloads/
+rm -rf weechat-2.6.tar.gz
+cd ~/Downloads/weechat-2.6
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+cd
+mkdir -p ~/.weechat/python/autoload
+cd ~/.weechat/python
+curl -O https://raw.githubusercontent.com/wee-slack/wee-slack/master/wee_slack.py
+### This install works but when I try to run /python load wee_slack.py inside of weechat
+### it says that another script with the
+### same name exists and it might be because I deleted the old one and redownloaded it
+
+# GNUtls
+# PreReqs
+sudo apt-get install -y dash git-core autoconf libtool gettext autopoint
+sudo apt-get install -y automake autogen nettle-dev libp11-kit-dev libtspi-dev libunistring-dev
+sudo apt-get install -y guile-2.2-dev libtasn1-6-dev libidn2-0-dev gawk gperf
+sudo apt-get install -y libunbound-dev dns-root-data bison gtk-doc-tools
+sudo apt-get install -y texinfo texlive texlive-generic-recommended texlive-extra-utils
+
+wget -P ~/Downloads/ https://www.gnupg.org/ftp/gcrypt/gnutls/v3.6/gnutls-3.6.10.tar.xz
+tar xf ~/Downloads/gnutls-3.6.10.tar.xz -C ~/Downloads/
+rm -rf ~/Downloads/gnutls-3.6.10.tar.xz
+
+# BitlBee -- You're just going to have to download it from a package manager rather than build it yourself
+### wget -P ~/Downloads/ http://get.bitlbee.org/src/bitlbee-3.5.1.tar.gz
+### tar xzf ~/Downloads/bitlbee-3.5.1.tar.gz -C ~/Downloads/
+### rm -rf ~/Downloads/bitlbee-3.5.1.tar.gz
+### sudo apt-get install libglib2.0-dev
+### sudo apt-get install gnutls-bin
+### sudo apt-get install libnss3-dev
+### cd ~/Downloads/bitlbee-3.5.1n
 
 # VIM - Vi IMproved
 sudo apt install vim
@@ -65,9 +107,23 @@ asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install ruby 2.6.5 # this shit takes forever
 echo 'ruby 2.6.5' >> ~/.tool-versions
 
+asdf plugin-add python
+asdf install python 3.7.5
+echo 'python 3.7.5' >> ~/.tool-versions
+
 # sdkman
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Postgres
+brew install postgres
+
+# MongoDB -- for some reason during this section homebrew just goes to shit and hangs
+# WHILE ALSO APPARENTLY INSTALLING IT AND NEVER EXITING THE PROCESS
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
 
 # spring-boot cli
 sdk install springboot
@@ -85,9 +141,11 @@ sudo apt install maven
 #Editors and other GUI tools
 sudo apt install snapd
 sudo snap install intellij-idea-ultimate --classic # Intellij - Ultimate Edition - https://www.jetbrains.com/help/idea/installation-guide.html
-snap remove vscode
 snap install code --classic # VSCode
 sudo snap install insomnia
+sudo snap install eclipse --classic
+
+cd ~/dotfiles-lilnux && make dotfiles
 
 # zsh
 sudo apt install zsh
