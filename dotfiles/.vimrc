@@ -305,6 +305,7 @@ function PackInit() abort
   " note: must run 'gem install neovim' to get this to work
   " might require the neovim headers
   call minpac#add('juliosueiras/vim-terraform-completion')
+  call minpac#add('ycm-core/YouCompleteMe')
 
   " Tagbar:
   call minpac#add('majutsushi/tagbar')
