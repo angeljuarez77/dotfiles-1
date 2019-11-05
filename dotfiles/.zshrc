@@ -561,6 +561,11 @@ alias pg_start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
 alias pg_stop='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres stop'
 alias pg_status='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres status'
 
+# Docker
+alias containers-stop='docker stop $(docker ps -aq)'
+alias containers-remove='docker rm $(docker ps -aq)'
+alias images-remove='docker rmi $(docker images -q)'
+
 # }}}
 # Functions {{{
 
