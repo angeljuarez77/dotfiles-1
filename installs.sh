@@ -68,9 +68,23 @@ sudo apt-get install -y guile-2.2-dev libtasn1-6-dev libidn2-0-dev gawk gperf
 sudo apt-get install -y libunbound-dev dns-root-data bison gtk-doc-tools
 sudo apt-get install -y texinfo texlive texlive-generic-recommended texlive-extra-utils
 
+# LibNettle
+wget -P ~/Downloads/ https://ftp.gnu.org/gnu/nettle/nettle-3.5.tar.gz
+tar xf ~/Downloads/nettle-3.5.1.tar.gz -C ~/Downloads/
+./configure --prefix=/usr --disable-static && make
+sudo make install
+## then as root user you have to do this
+### make install &&
+### chmod   -v   755 /usr/lib/lib{hogweed,nettle}.so &&
+### install -v -m755 -d /usr/share/doc/nettle-3.5.1 &&
+### install -v -m644 nettle.html /usr/share/doc/nettle-3.5.1
+
 wget -P ~/Downloads/ https://www.gnupg.org/ftp/gcrypt/gnutls/v3.6/gnutls-3.6.10.tar.xz
 tar xf ~/Downloads/gnutls-3.6.10.tar.xz -C ~/Downloads/
 rm -rf ~/Downloads/gnutls-3.6.10.tar.xz
+cd ~/Downloads/gnutls-3.6.10/
+./configure --prefix=/usr
+
 
 # BitlBee -- You're just going to have to download it from a package manager rather than build it yourself
 ### wget -P ~/Downloads/ http://get.bitlbee.org/src/bitlbee-3.5.1.tar.gz
@@ -125,7 +139,29 @@ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 
-# spring-boot cli
+# Docker - https://docs.docker.com/install/linux/docker-ce/ubuntu/
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# sudo apt-key fingerprint 0EBFCD88 # --> you have to verify your key
+# pub   rsa4096 2017-02-22 [SCEA]
+#       9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+# uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+# sub   rsa4096 2017-02-22 [S]
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+# docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
 sdk install springboot
 
 # apache
