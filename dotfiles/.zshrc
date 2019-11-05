@@ -556,6 +556,11 @@ alias idea='intellij-idea-ultimate'
 alias eclipse='~/eclipse/java-2019-09/eclipse/eclipse'
 alias jee-eclipse='~/Downloads/eclipse-jee-2019-09-R-linux-gtk-x86_64/eclipse/eclipse'
 
+# PostgreSQL
+alias pg_start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
+alias pg_stop='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres stop'
+alias pg_status='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres status'
+
 # }}}
 # Functions {{{
 
@@ -1237,3 +1242,6 @@ fi
 #[ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
 
 # }}}
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/angel/.sdkman"
+[[ -s "/home/angel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/angel/.sdkman/bin/sdkman-init.sh"
