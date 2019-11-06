@@ -566,6 +566,15 @@ alias containers-stop='docker stop $(docker ps -aq)'
 alias containers-remove='docker rm $(docker ps -aq)'
 alias images-remove='docker rmi $(docker images -q)'
 
+# Jenkins
+alias jenkins_status='systemctl status jenkins'
+alias jenkins_restart='systemctl restart jenkins'
+alias jenkins_start='systemctl start jenkins'
+alias jenkins_stop='systemctl stop jenkins'
+
+# JMeter
+alias jmeter-gui='~/Downloads/apache-jmeter-5.2/bin/jmeter'
+
 # }}}
 # Functions {{{
 
