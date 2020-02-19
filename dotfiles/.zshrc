@@ -1094,3 +1094,4 @@ if [[ -o interactive ]]; then
 fi
 
 # }}}
+# something
