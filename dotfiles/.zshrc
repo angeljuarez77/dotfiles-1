@@ -71,30 +71,30 @@ function path_radd() {
 #   106 Turquoise Background
 # Parameters
 #   di 	Directory
-LS_COLORS="di=1;34:"
-#   fi 	File
-LS_COLORS+="fi=0:"
-#   ln 	Symbolic Link
-LS_COLORS+="ln=1;36:"
-#   pi 	Fifo file
-LS_COLORS+="pi=5:"
-#   so 	Socket file
-LS_COLORS+="so=5:"
-#   bd 	Block (buffered) special file
-LS_COLORS+="bd=5:"
-#   cd 	Character (unbuffered) special file
-LS_COLORS+="cd=5:"
-#   or 	Symbolic Link pointing to a non-existent file (orphan)
-LS_COLORS+="or=31:"
-#   mi 	Non-existent file pointed to by a symbolic link (visible with ls -l)
-LS_COLORS+="mi=0:"
-#   ex 	File which is executable (ie. has 'x' set in permissions).
-LS_COLORS+="ex=1;92:"
-# additional file types as-defined by their extension
-LS_COLORS+="*.rpm=90"
-#
-## Finally, export LS_COLORS
-export LS_COLORS
+ LS_COLORS="di=1;34:"
+ #   fi 	File
+ LS_COLORS+="fi=0:"
+ #   ln 	Symbolic Link
+ LS_COLORS+="ln=1;36:"
+ #   pi 	Fifo file
+ LS_COLORS+="pi=5:"
+ #   so 	Socket file
+ LS_COLORS+="so=5:"
+ #   bd 	Block (buffered) special file
+ LS_COLORS+="bd=5:"
+ #   cd 	Character (unbuffered) special file
+ LS_COLORS+="cd=5:"
+ #   or 	Symbolic Link pointing to a non-existent file (orphan)
+ LS_COLORS+="or=31:"
+ #   mi 	Non-existent file pointed to by a symbolic link (visible with ls -l)
+ LS_COLORS+="mi=0:"
+ #   ex 	File which is executable (ie. has 'x' set in permissions).
+ LS_COLORS+="ex=1;92:"
+ # additional file types as-defined by their extension
+ LS_COLORS+="*.rpm=90"
+
+# Finally, export LS_COLORS
+ export LS_COLORS
 
 # }}}
 # Exported variables: General {{{
@@ -169,16 +169,6 @@ export RUST_SRC_PATH="$RUST_TOOLCHAIN_PATH/lib/rustlib/src/rust/src"
 # Bat
 export BAT_PAGER=''
 
-# IntelliJ IDEA
-export intellij='$HOME/idea-IU-192.6817.14/bin'
-
-#NVM Node Version Manager
-# export NVM_DIR="$HOME/.nvm"
-# ^^ redundant because I have asdf???
-
-#Tomcat Home Install version 9.0.27
-export CATALINA_HOME='/opt/tomcat/'
-
 # }}}
 # Path appends + Misc env setup {{{
 
@@ -198,24 +188,9 @@ if [ -d "$POETRY_LOC" ]; then
   source $HOME/.poetry/env
 fi
 
-INTELLIJ_IDEA="$HOME/idea-IU-192.6817.14/bin"
-if [ -d "$INTELLIJ_IDEA" ]; then
-  path_ladd "$INTELLIJ_IDEA"
-fi
-
-JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-if [ -d "$JAVA_HOME" ]; then
-  path_ladd "$JAVA_HOME"
-fi
-
-JRE_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
-if [ -d "$JAVA_HOME" ]; then
-  path_ladd "$JAVA_HOME"
-fi
-
-ANT_HOME="$HOME/apache-ant-1.9.14"
-if [ -d "$ANT_HOME" ]; then
-  path_ladd $ANT_HOME/bin
+GNUBIN="/usr/local/opt/coreutils/libexec/gnubin"
+if [ -d "$GNUBIN" ]; then
+  path_ladd "$GNUBIN"
 fi
 
 # EXPORT THE FINAL, MODIFIED PATH
@@ -547,33 +522,6 @@ alias pyenv-init='eval "$(pyenv init -)"'
 alias nodenv-init='eval "$(nodenv init -)"'
 alias goenv-init='eval "$(goenv init -)"'
 alias rbenv-init='eval "$(rbenv init -)"'
-
-# IntelliJ
-# alias intellij='idea.sh'
-alias idea='intellij-idea-ultimate'
-
-# Eclipse
-alias eclipse='~/eclipse/java-2019-09/eclipse/eclipse'
-alias jee-eclipse='~/Downloads/eclipse-jee-2019-09-R-linux-gtk-x86_64/eclipse/eclipse'
-
-# PostgreSQL
-alias pg_start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
-alias pg_stop='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres stop'
-alias pg_status='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres status'
-
-# Docker
-alias containers-stop='docker stop $(docker ps -aq)'
-alias containers-remove='docker rm $(docker ps -aq)'
-alias images-remove='docker rmi $(docker images -q)'
-
-# Jenkins
-alias jenkins_status='systemctl status jenkins'
-alias jenkins_restart='systemctl restart jenkins'
-alias jenkins_start='systemctl start jenkins'
-alias jenkins_stop='systemctl stop jenkins'
-
-# JMeter
-alias jmeter-gui='~/Downloads/apache-jmeter-5.2/bin/jmeter'
 
 # }}}
 # Functions {{{
@@ -1146,116 +1094,3 @@ if [[ -o interactive ]]; then
 fi
 
 # }}}
-# Default .oh-my-zsh .zshrc && nvm config for ubuntu {{{
-#
-## This is where I copy and pasted my own way because bleh
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-#
-# Skipping verification of insecure directories
-#ZSH_DISABLE_COMPFIX="true"
-
-# Path to your oh-my-zsh installation.
-#  export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-#plugins=(
-#	git
-#	zsh-syntax-highlighting
-#)
-#
-#source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# ^^^ Redundant becuase of asdf
-#
-#[ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
-
-# }}}
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/angel/.sdkman"
-[[ -s "/home/angel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/angel/.sdkman/bin/sdkman-init.sh"
