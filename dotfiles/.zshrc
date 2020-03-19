@@ -130,7 +130,7 @@ export GIT_PAGER=less
 
 # tmuxinator
 export EDITOR=/usr/bin/nvim
-export SHELL=/usr/bin/zsh
+export SHELL=/usr/local/bin/zsh
 
 # environment variable controlling difference between HI-DPI / Non HI_DPI
 # turn off because it messes up my pdf tooling
@@ -191,6 +191,11 @@ fi
 GNUBIN="/usr/local/opt/coreutils/libexec/gnubin"
 if [ -d "$GNUBIN" ]; then
   path_ladd "$GNUBIN"
+fi
+
+JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk"
+if [ -d "$JAVA_HOME" ]; then
+  path_ladd "$JAVA_HOME"
 fi
 
 # EXPORT THE FINAL, MODIFIED PATH
@@ -443,7 +448,7 @@ alias vim='nvim'
 alias grep='grep --color=auto'
 
 # enable color support of ls and also add handy aliases
-alias ls='ls --color=auto'
+alias ls='gls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
@@ -1094,4 +1099,7 @@ if [[ -o interactive ]]; then
 fi
 
 # }}}
-# something
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/supervirtue/.sdkman"
+[[ -s "/Users/supervirtue/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/supervirtue/.sdkman/bin/sdkman-init.sh"
