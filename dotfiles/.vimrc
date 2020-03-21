@@ -165,7 +165,7 @@ function! SetGlobalConfig()
   endif
 
   " Set Background: for PaperColor, also sets handler
-  call AlacrittySetBackground()
+  " call AlacrittySetBackground()
   call jobstart(
         \ 'ls ' . $HOME . '/.alacritty.yml | entr -ps "echo alacritty_change"',
         \ {'on_stdout': { j, d, e -> AlacrittySetBackground() }})
