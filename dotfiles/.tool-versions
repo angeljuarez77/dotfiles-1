@@ -1,0 +1,9 @@
+adopt-openjdk-8u222-b10
+ruby 2.7.0
+nodejs 12.16.0
+yarn 1.22.0
+clojure 1.10.1
+maven 3.6.3
+tmux 3.1
+nvim 0.4.3
+python 3.7.7
