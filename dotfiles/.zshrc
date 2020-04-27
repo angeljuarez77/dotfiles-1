@@ -172,12 +172,11 @@ export BAT_PAGER=''
 # IntelliJ IDEA
 export intellij='$HOME/idea-IU-192.6817.14/bin'
 
-#NVM Node Version Manager
-# export NVM_DIR="$HOME/.nvm"
-# ^^ redundant because I have asdf???
-
 #Tomcat Home Install version 9.0.27
 export CATALINA_HOME='/opt/tomcat/'
+
+# BROWSER
+export BROWSER='/usr/bin/google-chrome'
 
 # }}}
 # Path appends + Misc env setup {{{
@@ -216,6 +215,16 @@ fi
 ANT_HOME="$HOME/apache-ant-1.9.14"
 if [ -d "$ANT_HOME" ]; then
   path_ladd $ANT_HOME/bin
+fi
+
+INTELLIJ="$HOME/idea-ID-201.6668.121"
+if [ -d "$INTELLIJ" ]; then
+  path_ladd $INTELLIJ/bin
+fi
+
+SASS_LIBSASS_PATH="$HOME/Repositories/builds/libsass"
+if [ -d "$SASS_LIBSASS_PATH" ]; then
+  path_ladd $SASS_LIBSASS_PATH
 fi
 
 # EXPORT THE FINAL, MODIFIED PATH
@@ -574,6 +583,9 @@ alias jenkins_stop='systemctl stop jenkins'
 
 # JMeter
 alias jmeter-gui='~/Downloads/apache-jmeter-5.2/bin/jmeter'
+
+# Intellij Idea Community Edition
+# alias idea='~/idea-IC-201.6668.121/bin/idea.sh'
 
 # }}}
 # Functions {{{
@@ -1145,6 +1157,10 @@ if [[ -o interactive ]]; then
 
 fi
 
+# For siji fonts
+xset +fp /home/supervirtue/.local/share/fonts
+xset fp rehash
+
 # }}}
 # Default .oh-my-zsh .zshrc && nvm config for ubuntu {{{
 #
@@ -1256,6 +1272,11 @@ fi
 #[ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
 
 # }}}
+# {{{ sdkman
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/angel/.sdkman"
 [[ -s "/home/angel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/angel/.sdkman/bin/sdkman-init.sh"
+
+. /home/supervirtue/.asdf/asdf.sh
+
+# }}}
