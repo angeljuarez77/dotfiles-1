@@ -698,7 +698,9 @@ let g:PaperColor_Theme_Options.theme.default = {
       \ }
 
 " Folds And Highlights:
-let g:PaperColor_Theme_Options.theme['default.dark'] = {}
+let g:PaperColor_Theme_Options.theme['default.dark'] = {
+      \ 'transparent_background': 1
+      \ }
 let g:PaperColor_Theme_Options.theme['default.dark'].override = {
       \ 'folded_bg' : ['gray22', '0'],
       \ 'folded_fg' : ['gray69', '6'],
