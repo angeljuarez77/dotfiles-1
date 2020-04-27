@@ -1,4 +1,4 @@
-adopt-openjdk-8u222-b10
+java adopt-openjdk-8u222-b10
 ruby 2.7.0
 nodejs 12.16.0
 yarn 1.22.0
