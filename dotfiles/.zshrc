@@ -1146,3 +1146,7 @@ fi
 # xset fp rehash
 
 # }}}
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/supervirtue/.sdkman"
+[[ -s "/home/supervirtue/.sdkman/bin/sdkman-init.sh" ]] && source "/home/supervirtue/.sdkman/bin/sdkman-init.sh"
