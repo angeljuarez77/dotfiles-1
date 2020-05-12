@@ -112,8 +112,8 @@ function! SetGlobalConfig()
   set inccommand=nosplit
   augroup sroeca_incsearch_highlight
     autocmd!
-    autocmd CmdlineEnter /,\? set hlsearch
-    autocmd CmdlineLeave /,\? set nohlsearch
+    " autocmd CmdlineEnter /,\? set hlsearch
+    " autocmd CmdlineLeave /,\? set nohlsearch
   augroup END
 
   filetype plugin indent on
