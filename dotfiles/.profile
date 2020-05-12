@@ -11,3 +11,4 @@
 # this to protect myself from any breakages; hopefully I'm wise enough to grep
 # my dotfiles for "WARNING"
 #
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
