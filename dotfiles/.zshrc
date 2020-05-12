@@ -529,14 +529,6 @@ alias nodenv-init='eval "$(nodenv init -)"'
 alias goenv-init='eval "$(goenv init -)"'
 alias rbenv-init='eval "$(rbenv init -)"'
 
-# IntelliJ
-# alias intellij='idea.sh'
-# alias idea='intellij-idea-ultimate'
-
-# Eclipse
-alias eclipse='~/eclipse/java-2019-09/eclipse/eclipse'
-alias jee-eclipse='~/Downloads/eclipse-jee-2019-09-R-linux-gtk-x86_64/eclipse/eclipse'
-
 # PostgreSQL
 alias pg_start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
 alias pg_stop='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres stop'
@@ -555,9 +547,6 @@ alias jenkins_stop='systemctl stop jenkins'
 
 # JMeter
 alias jmeter-gui='~/Downloads/apache-jmeter-5.2/bin/jmeter'
-
-# Intellij Idea Community Edition
-# alias idea='~/idea-IC-201.6668.121/bin/idea.sh'
 
 # xrandr - second screen orientation commands
 alias rotated-screen='xrandr --output HDMI-0 --rotate right'
