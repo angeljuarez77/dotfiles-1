@@ -156,7 +156,8 @@ export FZF_DEFAULT_COMMAND
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Default browser for some programs (eg, urlview)
-export BROWSER='/usr/bin/firefox'
+# export BROWSER='/usr/bin/firefox'
+export BROWSER='/usr/bin/google-chrome'
 
 # Enable editor to scale with monitor's DPI
 export WINIT_HIDPI_FACTOR=1.0
@@ -175,8 +176,8 @@ export intellij='$HOME/idea-IU-192.6817.14/bin'
 #Tomcat Home Install version 9.0.27
 export CATALINA_HOME='/opt/tomcat/'
 
-# BROWSER
-export BROWSER='/usr/bin/google-chrome'
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
 
 # }}}
 # Path appends + Misc env setup {{{
@@ -202,15 +203,15 @@ if [ -d "$INTELLIJ_IDEA" ]; then
   path_ladd "$INTELLIJ_IDEA"
 fi
 
-JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+JAVA_HOME="$HOME/.asdf/installs/java/adopt-openjdk-8u222-b10"
 if [ -d "$JAVA_HOME" ]; then
   path_ladd "$JAVA_HOME"
 fi
 
-JRE_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
-if [ -d "$JAVA_HOME" ]; then
-  path_ladd "$JAVA_HOME"
-fi
+# JRE_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
+# if [ -d "$JAVA_HOME" ]; then
+#   path_ladd "$JAVA_HOME"
+# fi
 
 ANT_HOME="$HOME/apache-ant-1.9.14"
 if [ -d "$ANT_HOME" ]; then
@@ -229,6 +230,8 @@ fi
 
 # EXPORT THE FINAL, MODIFIED PATH
 export PATH
+
+export JAVA_HOME="$HOME/.asdf/installs/java/adopt-openjdk-8u222-b10"
 
 # }}}
 
@@ -559,7 +562,7 @@ alias rbenv-init='eval "$(rbenv init -)"'
 
 # IntelliJ
 # alias intellij='idea.sh'
-alias idea='intellij-idea-ultimate'
+# alias idea='intellij-idea-ultimate'
 
 # Eclipse
 alias eclipse='~/eclipse/java-2019-09/eclipse/eclipse'
@@ -586,6 +589,12 @@ alias jmeter-gui='~/Downloads/apache-jmeter-5.2/bin/jmeter'
 
 # Intellij Idea Community Edition
 # alias idea='~/idea-IC-201.6668.121/bin/idea.sh'
+
+# xrandr - second screen orientation commands
+alias rotated-screen='xrandr --output HDMI-0 --rotate right'
+alias normal-screen='xrandr --output HDMI-0 --rotate normal'
+
+alias spotifyd='~/Downloads/spotifyd'
 
 # }}}
 # Functions {{{
@@ -1157,6 +1166,9 @@ if [[ -o interactive ]]; then
 
 fi
 
+# Upon start of terminal session run these commands
+quote
+# sudo systemctl start mongod
 # For siji fonts
 xset +fp /home/supervirtue/.local/share/fonts
 xset fp rehash
@@ -1274,9 +1286,8 @@ xset fp rehash
 # }}}
 # {{{ sdkman
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/angel/.sdkman"
-[[ -s "/home/angel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/angel/.sdkman/bin/sdkman-init.sh"
-
-. /home/supervirtue/.asdf/asdf.sh
+[[ -s "/home/supervirtue/.sdkman/bin/sdkman-init.sh" ]] && source "/home/supervirtue/.sdkman/bin/sdkman-init.sh"
+#
+# . /home/supervirtue/.asdf/asdf.sh
 
 # }}}
