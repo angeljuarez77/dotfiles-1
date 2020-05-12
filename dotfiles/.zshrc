@@ -563,7 +563,8 @@ alias jmeter-gui='~/Downloads/apache-jmeter-5.2/bin/jmeter'
 alias rotated-screen='xrandr --output HDMI-0 --rotate right'
 alias normal-screen='xrandr --output HDMI-0 --rotate normal'
 
-alias spotifyd='~/Downloads/spotifyd'
+# Intellij installed with snap
+alias idea='intellij-idea-community'
 
 # }}}
 # Functions {{{
