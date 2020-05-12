@@ -180,9 +180,16 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
+################################
+### Commands to run on start ###
+################################
+
 # Set background image
 exec_always --no-startup-id feh --bg-scale ~/Pictures/background.png
+# Set second screen orientation
 exec_always --no-startup-id xrandr --output HDMI-0 --rotate right
+# Set polybar to run
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #############################
 ### settings for i3-gaps: ###
