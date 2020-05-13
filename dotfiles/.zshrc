@@ -199,6 +199,13 @@ if [ -d "$SASS_LIBSASS_PATH" ]; then
   path_ladd $SASS_LIBSASS_PATH
 fi
 
+JAVA_HOME="$HOME/.asdf/installs/java/adopt-openjdk-8u222-b10"
+if [ -d "$JAVA_HOME" ]; then
+  path_ladd $JAVA_HOME
+  export JAVA_HOME="$HOME/.asdf/installs/java/adopt-openjdk-8u222-b10"
+fi
+
+
 # EXPORT THE FINAL, MODIFIED PATH
 export PATH
 
