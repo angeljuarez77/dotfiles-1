@@ -169,9 +169,6 @@ export RUST_SRC_PATH="$RUST_TOOLCHAIN_PATH/lib/rustlib/src/rust/src"
 # Bat
 export BAT_PAGER=''
 
-# IntelliJ IDEA
-export intellij='$HOME/idea-IU-192.6817.14/bin'
-
 #NVM Node Version Manager
 # export NVM_DIR="$HOME/.nvm"
 # ^^ redundant because I have asdf???
@@ -196,11 +193,6 @@ POETRY_LOC="$HOME/.poetry/bin"
 if [ -d "$POETRY_LOC" ]; then
   path_ladd "$POETRY_LOC"
   source $HOME/.poetry/env
-fi
-
-INTELLIJ_IDEA="$HOME/idea-IU-192.6817.14/bin"
-if [ -d "$INTELLIJ_IDEA" ]; then
-  path_ladd "$INTELLIJ_IDEA"
 fi
 
 JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
@@ -434,12 +426,6 @@ bindkey -M menuselect '^l' forward-char
 WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 # }}}
-# ASDF: needs to run after ZSH setup {{{
-
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
-
-# }}}
 # Aliases {{{
 
 # Easier directory navigation for going up a directory tree
@@ -468,7 +454,7 @@ alias vim='nvim'
 alias grep='grep --color=auto'
 
 # enable color support of ls and also add handy aliases
-alias ls='ls --color=auto'
+alias ls='gls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
@@ -485,8 +471,8 @@ alias diff='diff -rupP'
 
 # Set copy/paste helper functions
 # the perl step removes the final newline from the output
-alias pbcopy="perl -pe 'chomp if eof' | xsel --clipboard --input"
-alias pbpaste='xsel --clipboard --output'
+# alias pbcopy="perl -pe 'chomp if eof' | xsel --clipboard --input"
+# alias pbpaste='xsel --clipboard --output'
 
 # Octave
 alias octave='octave --no-gui'
@@ -547,14 +533,6 @@ alias pyenv-init='eval "$(pyenv init -)"'
 alias nodenv-init='eval "$(nodenv init -)"'
 alias goenv-init='eval "$(goenv init -)"'
 alias rbenv-init='eval "$(rbenv init -)"'
-
-# IntelliJ
-# alias intellij='idea.sh'
-alias idea='intellij-idea-ultimate'
-
-# Eclipse
-alias eclipse='~/eclipse/java-2019-09/eclipse/eclipse'
-alias jee-eclipse='~/Downloads/eclipse-jee-2019-09-R-linux-gtk-x86_64/eclipse/eclipse'
 
 # PostgreSQL
 alias pg_start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
@@ -1256,6 +1234,12 @@ fi
 #[ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
 
 # }}}
+
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/angel/.sdkman"
-[[ -s "/home/angel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/angel/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/angeljuarez/.sdkman"
+[[ -s "/Users/angeljuarez/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/angeljuarez/.sdkman/bin/sdkman-init.sh"
