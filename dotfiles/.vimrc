@@ -306,6 +306,7 @@ function PackInit() abort
   " might require the neovim headers
   call minpac#add('juliosueiras/vim-terraform-completion')
   call minpac#add('ycm-core/YouCompleteMe')
+  call minpac#add('artur-shaik/vim-javacomplete2')
 
   " Tagbar:
   call minpac#add('majutsushi/tagbar')
@@ -1880,11 +1881,20 @@ let g:omni_syntax_use_single_byte = v:false
 let g:omni_syntax_use_iskeyword_numeric = v:false
 
 " }}}
+" Plugin: vim-javacomplete2 {{{
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" }}}
 " General: Global key remappings {{{
 
 " This is defined as a function to allow me to reset all my key remappings
 " without needing to repeate myself. Useful with Goyo for now
 function! DefaultKeyMappings()
+
+  " Vim Splits: No need to press Cntrl + w then direction
+  nnoremap <C-J> <C-W><C-J>
+  nnoremap <C-K> <C-W><C-K>
+  nnoremap <C-L> <C-W><C-L>
+  nnoremap <C-H> <C-W><C-H>
 
   " Escape: also clears highlighting
   nnoremap <silent> <esc> :noh<return><esc>

@@ -1,9 +1,98 @@
-body {
-  font-family: Ubuntu Mono;
-  font-weight:normal;
-  font-style:normal;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+:root {
+  --main-bg-color: #0A0413;
+  --light-bg-color: #0E0C12;
+  --main-light-pink-color: #FAC8CD;
+  --main-pink-color: #F72585;
+  --main-purple-color: #9067C6;
+  --main-teal-color: #1B9AAA;
 }
 
+body {
+  font-family: 'Fira Code', monospace;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * MacOS button group
+ */
+.macButtons-2MuSAC,
+.typeMacOS-3EmCyP {
+  background-color: var(--main-bg-color);
+}
+
+/*
+ * usernames in VC
+ */
+.usernameSpeaking-2xbKKh {
+  color: var(--main-pink-color);
+}
+
+/*
+ * text channel
+ */
+
+.mention {
+  color: var(--main-teal-color);
+}
+
+/*
+ * left side username panels in server
+ */
+.content-3YMskv {
+  background-color: var(--main-bg-color) !important;
+}
+
+/*
+ * friends panel
+ */
+.searchBar-6Kv8R2 {
+  background-color: var(--main-bg-color);
+}
+
+.container-1r6BKw {
+  background-color: var(--main-bg-color) !important;
+}
+
+.peopleColumn-29fq28 {
+  background-color: var(--main-bg-color);
+}
+
+.nowPlayingColumn-2sl4cE {
+  background-color: var(--main-bg-color);
+}
+
+.tabBar-ZmDY9vdiv .item-3HknzM[aria-label=Pending] {
+  color: #F4D35E !important;
+}
+
+/*
+ * user settings
+ */
+
+.sidebarRegionScroller-3MXcoP {
+  background-color: var(--main-bg-color) !important;
+}
+
+.sidebar-CFHs9e {
+  background-color: var(--main-bg-color);
+}
+
+.background-1QDuV2 {
+  background-color: var(--main-bg-color);
+}
+
+.fieldList-21DyL8 {
+  background-color: var(--main-bg-color);
+}
+
+.contentColumn-2hrIYH {
+  background-color: var(--light-bg-color);
+}
+
+/* ---------------------------------------------------------------------------- */
 .messages-3amgkR {
   background-color: #0a0413 !important;
 }
@@ -260,6 +349,14 @@ body {
   background-color: rgba(52, 74, 169, 0.6) !important;
 }
 
+/*
+ * wrapper for reaction buttons on messages
+ */
+.wrapper-2aW0bm {
+  background-color: var(--main-bg-color);
+  border: solid var(--main-border-color) .8px;
+}
+
 .spinner-wandering-cubes .spinner-item {
   background-color: #344AA9 !important;
 }
@@ -465,3 +562,10 @@ body {
 .search-results-wrap .action-buttons .jump-button {
   background-color: rgba(52, 74, 169, 0.8) !important;
 }
+
+
+.children-19S4PO,
+.children-19S4PO::after {
+  background-color: var(--main-bg-color);
+}
+

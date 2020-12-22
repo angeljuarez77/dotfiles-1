@@ -210,6 +210,16 @@ if [ -d "$ANT_HOME" ]; then
   path_ladd $ANT_HOME/bin
 fi
 
+RUBY_HOME="$HOME/.asdf/installs/ruby/2.7.2"
+if [ -d "$RUBY_HOME" ]; then
+  path_ladd $RUBY_HOME/bin
+fi
+
+GECKO_HOME="$HOME/Repositories/binaries/gecko"
+if [ -d "$GECKO_HOME" ]; then
+  path_ladd $GECKO_HOME/bin
+fi
+
 # EXPORT THE FINAL, MODIFIED PATH
 export PATH
 
@@ -552,6 +562,9 @@ alias jenkins_stop='systemctl stop jenkins'
 
 # JMeter
 alias jmeter-gui='~/Downloads/apache-jmeter-5.2/bin/jmeter'
+
+# random name generators
+alias 2020-21-NYC_name='node ~/Repositories/perscholas/randomNameGenerator/2020-21-NYC.js'
 
 # }}}
 # Functions {{{
@@ -1234,11 +1247,16 @@ fi
 #[ -f "/home/angel_juarez/.shopify-app-cli/shopify.sh" ] && source "/home/angel_juarez/.shopify-app-cli/shopify.sh"
 
 # }}}
-
+## {{{ Python | pyenv
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+
+# }}}
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/angeljuarez/.sdkman"
